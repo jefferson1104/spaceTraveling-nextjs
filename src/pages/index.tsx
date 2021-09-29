@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
 
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { FiCalendar, FiUser } from 'react-icons/fi';
 
@@ -60,7 +60,14 @@ export default function Home({
                 <p>{post.data.subtitle}</p>
                 <div className={styles.postInfo}>
                   <time>
-                    <FiCalendar /> {post.first_publication_date}
+                    <FiCalendar />{' '}
+                    {format(
+                      parseISO(post.first_publication_date),
+                      'dd MMM yyyy',
+                      {
+                        locale: ptBR,
+                      }
+                    )}
                   </time>
                   <p>
                     <FiUser /> {post.data.author}
@@ -69,12 +76,12 @@ export default function Home({
               </a>
             </Link>
           ))}
+          {nextPage && (
+            <button type="button" onClick={handleGetMorePosts}>
+              Carregar mais posts
+            </button>
+          )}
         </div>
-        {nextPage && (
-          <button type="button" onClick={handleGetMorePosts}>
-            Carregar mais posts
-          </button>
-        )}
       </main>
     </>
   );
@@ -95,13 +102,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = postsResponse.results.map(post => {
     return {
       uid: post.uid,
-      first_publication_date: format(
-        new Date(post.first_publication_date),
-        'dd MMM Y',
-        {
-          locale: ptBR,
-        }
-      ),
+      first_publication_date: post.first_publication_date,
       data: {
         title: post.data.title,
         subtitle: post.data.subtitle,
