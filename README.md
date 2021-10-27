@@ -4,37 +4,32 @@
 
 <p align="center">
   <img alt="technology" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
-
   <img alt="technology" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
 </p>
 
-## 💻 Sobre o projeto
+# 💻 About this project
+A site about places to travel, tells about the places, when is the best time to go, and other tips. The content is managed by **Prismic CMS**, and the application development was done using **Next.js** and **Typescript** as the main technology.
 
-Um site sobre lugares para viajar, conta sobre os lugares, qual a melhor epoca para ir, e outras dicas. O conteúdo é gerenciado pelo **Prismic CMS**, e o desenvolvimento da aplicação foi feito utilizando como principal tecnologia o **Next.js** e o **Typescript**.
-
-## :hammer: Tecnologias
-
-Este projeto foi desenvolvido com as seguintes Ferramentas:
-
+# :hammer: Technologies
+This project was developed with the following Tools:
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[Next.js](https://nextjs.org/)**
 - **[Prismic CMS](https://prismic.io/)**
 
-## 🚀 Executar o projeto
-
+# 🚀 Run this project
 ```bash
-# Clone o repositório
+# Clone this repository
 $ git clone https://github.com/jefferson1104/spaceTraveling-nextjs.git
 
-# Configure as variáveis de ambiente
-# Siga o exemplo do arquivo .env.local.example
-# Após os ajustes renomeie para .env.local
+# Set the environment variables
+# Follow the example of the .env.local.example file
+# After the adjustments, rename it to .env.local
 
-# Execute o projeto
+# Running application
 $ yarn dev
 ```
 
-## 🎨 Screenshots
+# 🎨 Screenshots
 
 ![screenshot](./assets/screenshots/screenshot-01.png)
 ![screenshot](./assets/screenshots/screenshot-02.png)
